@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 6.1 (Python 3.11.4 on darwin)" generated="20230714 17:26:32.260" rpa="false" schemaversion="4">
+<suite id="s1" name="Verify search functionality" source="/Users/muratbilgin/PycharmProjects/pythonProject1/Tests/eBay/Verify_search_functionality.robot">
+<test id="s1-t1" name="Verify basic search functionality" line="15">
+<kw name="Start TestCase" library="CommonFunctionality" type="SETUP">
+<kw name="Open Browser" library="SeleniumLibrary">
+<arg>http://www.ebay.com</arg>
+<arg>chrome</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<msg timestamp="20230714 17:26:32.477" level="INFO">Opening browser 'chrome' to base url 'http://www.ebay.com'.</msg>
+<status status="PASS" starttime="20230714 17:26:32.476" endtime="20230714 17:26:37.260"/>
+</kw>
+<kw name="Maximize Browser Window" library="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" starttime="20230714 17:26:37.260" endtime="20230714 17:26:37.855"/>
+</kw>
+<status status="PASS" starttime="20230714 17:26:32.475" endtime="20230714 17:26:37.855"/>
+</kw>
+<kw name="Input Search Text and Click Search" library="HeaderPage">
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>xpath://*[@id="gh-ac"]</arg>
+<arg>${search_text}[1]</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20230714 17:26:37.859" level="INFO">Typing text 'travel' into text field 'xpath://*[@id="gh-ac"]'.</msg>
+<status status="PASS" starttime="20230714 17:26:37.857" endtime="20230714 17:26:38.132"/>
+</kw>
+<kw name="Press Keys" library="SeleniumLibrary">
+<arg>xpath://*[@id="gh-btn"]</arg>
+<arg>[Return]</arg>
+<doc>Simulates the user pressing key(s) to an element or on the active browser.</doc>
+<msg timestamp="20230714 17:26:38.133" level="INFO">Sending key(s) ('[Return]',) to xpath://*[@id="gh-btn"] element.</msg>
+<msg timestamp="20230714 17:26:43.425" level="INFO">Sending keys [Return]</msg>
+<status status="PASS" starttime="20230714 17:26:38.132" endtime="20230714 17:26:43.592"/>
+</kw>
+<status status="PASS" starttime="20230714 17:26:37.856" endtime="20230714 17:26:43.592"/>
+</kw>
+<kw name="Verify Search Results" library="SearchResultsPage">
+<kw name="Page Should Contain" library="SeleniumLibrary">
+<arg>${search_result} ${search_text}[1]</arg>
+<doc>Verifies that current page contains ``text``.</doc>
+<msg timestamp="20230714 17:26:43.614" level="INFO">Current page contains text 'results for travel'.</msg>
+<status status="PASS" starttime="20230714 17:26:43.593" endtime="20230714 17:26:43.615"/>
+</kw>
+<status status="PASS" starttime="20230714 17:26:43.592" endtime="20230714 17:26:43.615"/>
+</kw>
+<kw name="Finish TestCase" library="CommonFunctionality" type="TEARDOWN">
+<kw name="Close Browser" library="SeleniumLibrary">
+<doc>Closes the current browser.</doc>
+<status status="PASS" starttime="20230714 17:26:43.615" endtime="20230714 17:26:43.726"/>
+</kw>
+<status status="PASS" starttime="20230714 17:26:43.615" endtime="20230714 17:26:43.726"/>
+</kw>
+<doc>This test case verifies the basic search</doc>
+<tag>Functional</tag>
+<status status="PASS" starttime="20230714 17:26:32.474" endtime="20230714 17:26:43.726"/>
+</test>
+<test id="s1-t2" name="Verify advanced search functionality" line="24">
+<kw name="Start TestCase" library="CommonFunctionality" type="SETUP">
+<kw name="Open Browser" library="SeleniumLibrary">
+<arg>http://www.ebay.com</arg>
+<arg>chrome</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<msg timestamp="20230714 17:26:43.729" level="INFO">Opening browser 'chrome' to base url 'http://www.ebay.com'.</msg>
+<status status="PASS" starttime="20230714 17:26:43.728" endtime="20230714 17:26:51.528"/>
+</kw>
+<kw name="Maximize Browser Window" library="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" starttime="20230714 17:26:51.528" endtime="20230714 17:26:52.007"/>
+</kw>
+<status status="PASS" starttime="20230714 17:26:43.728" endtime="20230714 17:26:52.007"/>
+</kw>
+<kw name="Click on Advanced Search Link" library="HeaderPage">
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>//*[@id='gh-as-a']</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20230714 17:26:52.010" level="INFO">Clicking element '//*[@id='gh-as-a']'.</msg>
+<status status="PASS" starttime="20230714 17:26:52.008" endtime="20230714 17:26:53.737"/>
+</kw>
+<status status="PASS" starttime="20230714 17:26:52.008" endtime="20230714 17:26:53.737"/>
+</kw>
+<kw name="Finish TestCase" library="CommonFunctionality" type="TEARDOWN">
+<kw name="Close Browser" library="SeleniumLibrary">
+<doc>Closes the current browser.</doc>
+<status status="PASS" starttime="20230714 17:26:53.737" endtime="20230714 17:26:53.855"/>
+</kw>
+<status status="PASS" starttime="20230714 17:26:53.737" endtime="20230714 17:26:53.855"/>
+</kw>
+<doc>This test case verifies the advanced search</doc>
+<tag>Functional</tag>
+<status status="PASS" starttime="20230714 17:26:43.727" endtime="20230714 17:26:53.856"/>
+</test>
+<doc>Basic Search Functionality</doc>
+<status status="PASS" starttime="20230714 17:26:32.261" endtime="20230714 17:26:53.857"/>
+</suite>
+<statistics>
+<total>
+<stat pass="2" fail="0" skip="0">All Tests</stat>
+</total>
+<tag>
+<stat pass="2" fail="0" skip="0">Functional</stat>
+</tag>
+<suite>
+<stat pass="2" fail="0" skip="0" id="s1" name="Verify search functionality">Verify search functionality</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>
